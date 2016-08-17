@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet"  type="text/css" href="./style img/hover.css">
+	<link rel="stylesheet"  type="text/css" href="./style img/style-main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<title>Welcome! again!</title>
+	<style>
+	@media screen and (max-width: 680px) {
+		#canvas, #myown, #JS ,#Angular  {
+			display: none;
+		}
+		.profile {
+			margin-top: 10px;
+			width: 100%;
+			height: 40%;
+		}
+	}
+	</style>
+</head>
+<body>
+<div id="canvas" class="canvas"></div>
+
+<ul>
+  <li><a href="javascript:window.location.reload(true)">Home</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Documents</a>
+    <div class="dropdown-content">
+      <a href="./file/Frank-CV.pdf">Resume</a>
+      <a href="./file/transcript.pdf">Transcript</a>
+      <a href="./file/paper.pdf">Paper</a>
+    </div>
+  </li>
+  
+  <li id="JS" class="dropdown">
+    <a href="#" class="dropbtn">JS is Fun</a>
+    <div class="dropdown-content">
+      <a href="24.html">Game 24</a>
+      <a href="sorting.html">Sorting</a>
+	  <a href="color.html">Colors</a>
+    </div>
+  </li>
+  
+  <li id="Angular" class="dropdown">
+    <a href="#" class="dropbtn">Angular is Helpful</a>
+    <div class="dropdown-content">
+      <a href="angular/">TODO List</a>
+    </div>
+  </li>
+  
+  <li style="float:right"><a href="contact.html"/>Contact Me</a></li>
+</ul>
+
+<div id="profile">
+	<div class="profile" id="div1" onClick="location.href='skills.html'">
+	</div>
+	<div class="profile" id="div2" onClick="location.href='education.html'">
+	</div>
+	<div class="profile" id="div3" onClick="location.href='experience.html'">
+	</div> 
+	<div class="profile" id="div4" onClick="location.href='project.html'">
+	</div>
+</div>
+
+<div id="myown">
+	<div id="port">
+		<a href="main.html" class="defaultCursor">Main Page</a>
+	</div>
+	<div id="tele" class="conceal">
+		<span class="tele">(408)307-4702</span>
+	</div>
+	<div id="name" class="conceal">
+		<span class="name">Zhentian Zhang</span>
+	</div>
+	<div id="Email" class="conceal">
+		<span class="email"><a id="linka" href="contact.html">frank4work@hotmail.com</a></span>
+	</div>
+	<div id="prefername" class="conceal">
+		<span class="prefername">Frank</span>
+	</div>
+	<div id="close" class="conceal">
+		<span class="close">Shrink back</span>
+	</div>
+</div>
+
+
+<div id="footerContainer" class="hvr-overline-from-center">
+	<p id="footer" >Copyright Reserved @ 2016 Frank. Website is actively updating!</p>
+</div>
+
+</body>
+
+<script type="text/javascript" src="./js/general.js"></script>
+<script type="text/javascript" src="./js/mainpageJS.js"></script>
+
+</html>

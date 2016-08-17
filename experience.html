@@ -1,0 +1,109 @@
+<html>
+<style>
+#show{
+	position:relative;
+}
+#back{
+	position:relative;
+}
+table{
+	border-collapse: collapse;
+	margin-left:2%;
+	width:96%;
+}
+td{
+	vertical-align:top;
+}
+th, td {
+	padding: 8px;
+    border-top: 1px solid #ddd;
+}
+tr{
+	display:none;
+}
+tr:hover{
+	background-color: #ddd;
+}
+img{
+	width:100%;
+}
+span.calendarbefore:before{
+	content: "\01F4C5";
+    display: inline;
+	left: 1em;
+	padding: 0 1px;
+}
+span.handpointbefore:before{
+	content: "\261e";
+    display: inline;
+	left: 1em;
+	padding: 0 1px;
+}
+</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+	<link rel="stylesheet"  type="text/css" href="./style img/style-profile.css">
+    <link rel="stylesheet"  type="text/css" href="./style img/hover.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <title>My Experience</title>
+  <script>
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("#div1").fadeIn(500, 
+			function(){$("#div2").fadeIn(500,
+				function(){$("#back").fadeIn(200);}
+			);}
+		);
+    });
+});
+</script>
+</head>
+
+<body>
+
+<div id="show" class="show" title="show me your power!"></div>
+<br>
+
+<table>
+  <tr id="div1">
+    <td width="20%"><img class="USCRI" alt="U.S. Committee for Refugees And Immigrants" src="./style img/USCRI.gif"></td>
+    <td width="30%">
+	<span class="Bold">U.S. Committee for Refugees And Immigrants</span><br><br>
+	<i class="fa fa-external-link"></i> <a href="http://refugees.org/" TARGET="_blank">Official Website</a><br><br>
+	<i class="fa fa-briefcase"></i><i> Software Engineer Intern</i></span><br><br>
+	<span class="calendarbefore"> 06/2015-11/2015</span>
+	</td> 
+    <td width="50%">
+	<span class="handpointbefore"> Designed and developed both Front& back end coding and did code review to the colleagues' codes.</span><br>
+	<span class="handpointbefore"> Processed a project from sketch ideas to prototypes with both front& back-end details.</span><br>
+	<span class="handpointbefore"> Examined the security loopholes(XSS, SQLi) and fixed them.</span><br>
+	<span class="handpointbefore"> Write User documentation and translate it into .html file before publishing it along with developed website.</span><br>
+	</td>
+  </tr>
+  
+  <tr id="div2">
+    <td width="20%"><img class="ERYUAN" alt="China Railway Eryuan Engineering Group Co. Ltd" src="./style img/eryuan.jpg"></td>
+    <td width="30%">
+	<span class="Bold">China Railway Eryuan Engineering Group Co. Ltd</span><br><br>
+	<i class="fa fa-external-link"></i> <a href="http://www.cccme.org.cn/shop/cccme10854/index.aspx" TARGET="_blank">Official Website</a><br><br>
+	<i class="fa fa-briefcase"></i><i> Software Engineer Intern</i></span><br><br>
+	<span class="calendarbefore"> 09/2013-04/2014</span>
+	</td> 
+    <td width="50%">
+	<span class="handpointbefore"> Tested and debugged the whole system.</span><br>
+	<span class="handpointbefore"> Found and fixed the security loopholes existed in the upload function of the system(fuzzing).</span><br>
+	<span class="handpointbefore"> Leaded documentation and translation works.</span><br>
+	<span class="handpointbefore"> Did code review to the colleagues' codes.</span><br>
+	</td>
+  </tr>
+</table>
+
+
+<div id="back" class="back" title="Let's get back..." style="display:none;" onclick="history.go(-1);"></div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+#holder{
+	margin:auto;
+}
+#canvas{
+	position:relative;
+	left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 200px;
+	border: 5px inset #d2e3ed;
+	overflow:hidden;
+}
+div.pixel {
+	position: relative;
+	display:inline-block;
+	margin: 5px;
+    width: 50px;
+    height: 50px;
+	border-radius: 5px;
+	border: 5px outset #d2e3ed;
+}

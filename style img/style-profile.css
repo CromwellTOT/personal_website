@@ -1,0 +1,42 @@
+div.show{
+	cursor: hand;
+	position:absolute;
+	left:45%;
+	background-image: url(show.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+	width: 100px;
+    height: 100px;
+}
+
+div.body{
+	font-family: "Times New Roman", Times, serif;
+	padding-left:50px;
+	padding-right:50px;
+	padding-top:100px;
+}
+
+div.back{
+	cursor: hand;
+	background-image: url(back.png);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+	width: 100px;
+    height: 100px;
+}
+
+#back:hover, #show:hover{
+  cursor: hand;
+  -webkit-animation-name: hvr-wobble-top;
+  animation-name: hvr-wobble-top;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+
+}
+span.Bold{
+	font-weight: bold;
+}

@@ -1,0 +1,115 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+	<link rel="stylesheet"  type="text/css" href="./style img/hover.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<title>You are Welcome!</title>
+<style>
+#flip{
+    margin: 10% 200px;
+	padding:5px;
+    text-align: center;
+	background-color:#c3c3c3;
+    border: solid 1px #c3c3c3;
+	cursor:not-allowed;
+}
+#container{
+	padding: 5px;
+    text-align: center;
+	display:none;
+}
+#magic{
+	color:#e1e1e1;
+	font-size:60px;
+}
+#magiccontainer{
+	background-color:#e1e1e1;
+}
+#link{
+	width:230px;
+	padding:5px;
+	background-color:#e1e1e1;
+}
+.hvr-icon-forward {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  padding-right: 2.2em;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+.hvr-icon-forward:before {
+  content: "\f138";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-icon-forward:hover:before, .hvr-icon-forward:focus:before, .hvr-icon-forward:active:before {
+	-webkit-transform: translateX(4px);
+	transform: translateX(4px);
+}
+#dang{
+/*border:1px solid black;*/
+margin-top:100px;
+position: relative;
+width:100px;
+height:100px;
+z-index:0;
+}
+#budang{
+position: absolute;
+left: 20px; 
+top: 200px;
+visibility:hidden;
+}
+#budang:hover{
+  cursor: hand;
+}
+</style>
+</head>
+	<body>
+	<h1>Actually... There is nothing here hha</h1>
+	<div id="flip">Try me?</div>
+	<div id="container">
+	<div id="magiccontainer" class="hvr-bubble-float-bottom"><i id="magic" class="fa fa-magic"></i></div>
+	<br>
+	<div id="link" style="cursor:hand" class="hvr-icon-forward" onClick="location.href='main.html'">BUT IF ONLY U CLICK</div>
+	</div>
+	
+	<div id="dang" onclick="budang()">
+	</div>
+	<a id="budang" href="formcode.php">leetcodenotes</a>
+   </body>
+   <script>
+$("#magic").mouseover(function(){
+	$("#magic").css({
+                transition : 'color 1s ease-in-out',
+                "color": "#A271CA"
+            });
+});
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#container").slideDown("slow");
+    });
+});
+function budang(){
+	document.getElementById("budang").style.visibility = "visible";
+}
+   </script>
+</html>

@@ -1,0 +1,136 @@
+<html>
+<head>
+	<link rel="stylesheet"  type="text/css" href="./style img/style-sign.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet"  type="text/css" href="./style img/hover.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<title>WELCOME</title>
+<style>
+#what{
+	position:absolute;
+	width:99%;
+	height:60px;
+}
+#wat{
+	//border:1px black solid;
+	width:30%;
+}
+#wat:hover{
+	cursor: hand;
+}
+b{
+	color:red;
+}
+
+
+
+
+#hand{
+	//border:1px black solid;
+	font-size:60px;
+}
+#magiccontainer{
+	display:none;
+	//border:1px black solid;
+	width:60px;
+}
+#magiccontainer:hover{
+	cursor: hand;
+}
+.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+#footerContainer{
+	text-align:center;
+	position:fixed;
+	bottom:0px;
+	width:100%;;
+}
+#footer{
+	width:30%;
+}
+
+</style>
+</head>
+	<body>
+	<div id="what" align="center">
+	<p id="wat">What's <b>cool</b> these days!!!</p>
+	<div id="magiccontainer" class="hvr-float-shadow">
+		<i id="hand" class="fa fa-hand-pointer-o"></i>
+	</div>
+</div>
+<div>
+</div>
+
+
+<div id="tableContainer-1">
+  <div id="tableContainer-2">
+	<form action = "connectivity.php" method = "POST">
+		<table id="table">
+			<tr>
+				<td align="center">Name:</td>
+				<td><input type = "text" placeholder="Guest" name = "name" value="heihei"/></td>
+			</tr>
+			<tr>
+				<td align="center">Password:</td>
+				<td><input type = "text" placeholder="password" name = "password" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type = "submit" /></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+</div>
+	<div>
+<div id="Awesome" class="anim750">
+	
+  <div class="reveal circle_wrapper">
+		<div class="circle">Guest, password</div>
+	</div>
+						
+	<div class="sticky anim750">
+		<div class="front circle_wrapper anim750">
+			<div class="circle anim750"></div>
+	  </div>
+	</div>
+	
+  <h4>No clue?</h4>
+						
+  <div class="sticky anim750">
+		<div class="back circle_wrapper anim750">
+			<div class="circle anim750"></div>
+		</div>
+	</div>
+						
+</div>
+<div id="footerContainer">
+	<p  id="footer" class="hvr-overline-from-center"><br />run by Frank</p>
+	</div>
+</body>
+<script>
+$(document).ready(function() {
+	var changed=false;
+	$('#wat').click(function(){
+		$("#magiccontainer").fadeIn(1000);;
+	});
+	$('#hand').mouseover(function(){
+		if(!changed){
+			$("#wat").fadeOut(1000,function(){
+			$(this).html("<a target='_blank' href='http://lavadip.com/experiments/jigsaw/'>The Magic of SVG!!!</a>").fadeIn(1000);
+			});
+			changed=true;
+		}
+	});
+});
+</script>
+</html>
+

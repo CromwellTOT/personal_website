@@ -1,0 +1,63 @@
+p,h1{
+	text-align: center;
+}
+#cards {
+    padding: 0;
+	text-align: center;
+	display: block;
+}
+
+#cards li {
+    display: inline;
+}
+
+#cards li {
+    padding: 45px 39px;
+    text-decoration: none;
+}
+
+#cards li:hover {
+    border: 1px black solid;
+}
+
+#A {
+    background: url(clubcards.png) 0 0;
+}
+#two {
+    background: url(clubcards.png) -90px 0;
+}
+#three {
+    background: url(clubcards.png) -180px 0;
+}
+#four {
+    background: url(clubcards.png) -270px 0;
+}
+#five {
+    background: url(clubcards.png) -360px 0;
+}
+#six {
+    background: url(clubcards.png) -450px 0;
+}
+#seven {
+    background: url(clubcards.png) -541px 0;
+}
+#eight {
+    background: url(clubcards.png) -631px 0;
+}
+#nine {
+    background: url(clubcards.png) -721px 0;
+}
+#ten {
+    background: url(clubcards.png) -811px 0;
+}
+#jack {
+    background: url(clubcards.png) -902px 0;
+}
+#queen {
+    background: url(clubcards.png) -992px 0;
+}
+#king {
+    background: url(clubcards.png) -1082px 0;
+}
+
+

@@ -1,0 +1,273 @@
+body{
+	margin:0px;
+	padding:0px;
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+* {
+    box-sizing: border-box;
+}
+/*header&footer*/
+.welcomepic{
+	position:relative;
+	width:100%;
+	height:200px;
+	background: url("wide-horizon.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+.canvas{
+	margin:10px;
+	position:relative;
+	left: 0px;
+    top: 0px;
+    width: auto;
+    height: 30%;
+	border: 5px inset #d2e3ed;
+	overflow:hidden;
+}
+#holder{
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+div.pixel {
+	position: relative;
+	display:inline-block;
+	margin: 5px;
+    width: 50px;
+    height: 50px;
+	border-radius: 5px;
+	border: 5px outset #d2e3ed;
+}
+#footerContainer{
+	text-align:center;
+	position:relative;
+	width:100%;
+}
+#footer{
+	width:100%;
+}
+/*navigation bar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #111;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index:3;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*profile*/
+#profile{
+	position:relative;
+	padding:10px;
+	height:100%;
+}
+.profile { 
+	text-align: center;
+	width: 50%; 
+	height: 50%; 
+	float: left; 
+}
+#div1 { 
+	background-image: url(skills.jpg);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+}
+#div2 { 
+	background-image: url(education.jpg);
+    background-repeat: no-repeat;
+	background-size:100% 100%; 
+}
+#div3 { 
+	background-image: url(experience.jpg);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+}
+#div4 { 
+	background-image: url(project.jpg);
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+}
+#div1:hover, #div2:hover, #div3:hover, #div4:hover, #myown:hover {
+	cursor: pointer !important;
+	-webkit-animation-name: hvr-bob-float, hvr-bob;
+	animation-name: hvr-bob-float, hvr-bob;
+	-webkit-animation-duration: .3s, 1.5s;
+	animation-duration: .3s, 1.5s;
+	-webkit-animation-delay: 0s, .3s;
+	animation-delay: 0s, .3s;
+	-webkit-animation-timing-function: ease-out, ease-in-out;
+	animation-timing-function: ease-out, ease-in-out;
+	-webkit-animation-iteration-count: 1, infinite;
+	animation-iteration-count: 1, infinite;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-direction: normal, alternate;
+	animation-direction: normal, alternate;
+}
+/*the circle in the mid*/
+#myown {
+	position:fixed;
+	background-image: url(selfie.jpg);
+	background-size: 100% 100%;
+}
+#port{
+	background-color:grey;
+	position:absolute;
+	top:10%;
+	left:35%;
+	width:30%;
+	height:20px;
+	z-index:2;
+	text-align:center;
+	opacity: 0;
+}
+a.defaultCursor{
+	cursor:default;
+}
+#tele{
+	background-color:grey;
+	position:absolute;
+	top:30%;
+	left:5%;
+	width:30%;
+	height:40px;
+	z-index:2;
+}
+#name{
+	background-color:grey;
+	position:absolute;
+	top:30%;
+	left:65%;
+	width:30%;
+	height:40px;
+	z-index:2;
+}
+#Email{
+	background-color:grey;
+	position:absolute;
+	top:50%;
+	left:5%;
+	width:30%;
+	height:40px;
+	z-index:2;
+}
+#linka:link {
+    color:lavenderblush;
+}
+#linka:visited {
+    color: white;
+}
+#linka:hover {
+    color:yellow;
+}
+#prefername{
+	background-color:grey;
+	position:absolute;
+	top:50%;
+	left:65%;
+	width:30%;
+	height:40px;
+	z-index:2;
+}
+#close{
+	background-color:grey;
+	position:absolute;
+	top:70%;
+	left:35%;
+	width:30%;
+	height:40px;
+	z-index:2;
+	 -webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+#close:hover{
+	cursor: pointer;
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	-webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+	transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+span.tele:before {
+    content: "\260E";
+    display: block;
+    margin-right: 0.5em;
+}
+span.email:before{
+	 content: "\2709";
+    display: block;
+    margin-right: 0.5em;
+}
+span.name:before{
+	 content: "\2642";
+    display: block;
+    margin-right: 0.5em;
+}
+span.prefername:before{
+	 content: "\2661";
+    display: block;
+    margin-right: 0.5em;
+}
+span.close:before{
+	content: "\25b2";
+    display: block;
+    margin-right: 0.5em;
+}
+
+div.conceal{
+	display:none;
+	text-align:center;
+	color:lavenderblush;
+}

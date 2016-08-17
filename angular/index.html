@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="todoApp" ng-cloak>
+
+<head>
+	<title>todo list</title>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style/index.css">
+</head>
+
+<body style="background-color: snow">
+	<div ng-controller="todoController">
+		<table style="margin : auto;">
+			<captain>TODO LIST</captain>
+			<thead>
+				<td colspan="3" style="width:400px; padding:0px 40px 0 40px; text-align:center">
+					<form class="form-inline" ng-submit="addItem()">
+						<input type="text" class="form-control maxwidth" ng-model="newItem" placeholder="Let's do it!" required />
+					</form>
+				</td>
+			</thead>
+			<tfoot>
+				<td colspan="3" ng-show="todos.length > 0" class="text-center">
+					<span style="margin-left:20px; float:left">{{completeNumber}} todos left</span>
+					<span style="font-size:10px">Double click to edit/save</span>
+					<span style="margin-right:40px" class="underline right" ng-click="clearComplete()">clear complete</span>
+				</td>
+			</tfoot>
+			<tbody>
+			<tr height="40px" ng-mouseenter="hover = false" ng-mouseleave="hover = true" ng-repeat="item in todos" ng-class="{'complete': item.done==true}">
+				<td width = "50px" class="text-center">
+					<input type="checkbox" ng-click="complete($index)"/>
+				</td>
+				<td width = "300px" overflow="hidden" ng-dblclick="editTodo(item)">
+					<span ng-hide="item.editing">{{item.title}}</span>
+					<input style="display:block; width:280px;" ng-show="item.editing" ng-model="item.title"> 
+				</td>
+				<td width = "50px">
+					<span class="pointer btn-link" ng-class="{hidden: hover}" ng-click="remove($index)">&times</span>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/controller.js"></script>
+</html>

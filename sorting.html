@@ -1,0 +1,238 @@
+<html>
+<head>
+	<link rel="stylesheet"  type="text/css" href="./style img/style-profile.css">
+	<link rel="stylesheet"  type="text/css" href="./style img/hover.css">
+	<script type="text/javascript" src="./js/sort.js"></script>
+	<script src="./js/sorttable.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<title>Sorting Efficiency</title>
+</head>
+<style>
+h1{
+	text-align:center;
+}
+div{
+	position:relative;
+}
+center{
+	position:relative;
+	padding:10px;
+	margin:auto;
+	margin-top:10px;
+	border-top:1px black solid;
+	width:80%;
+}
+p{
+	word-break: break-all;
+	padding:10px;
+	text-align:left;
+	border:1px blue solid;
+}
+p.notification{
+	text-align:center;
+	padding:0;
+	border: none;
+	color:red;
+}
+p.text{
+	min-height:20px;
+}
+input[type="text"] {
+    width: 200px;
+}
+table{
+	margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+tr.hover:hover{
+	background-color: #ddd;
+}
+</style>
+<body>
+<h1>Sorting!!!</h1>
+<center>	
+	<input id="toggleTable" type="button" value="Show Statics"/>
+</center>	
+<div id="ETable">
+	<p class="notification" id="tableNotif">Also clear the table? Try F5...</p>
+	<table id="myTable" style="width:80%" class="sortable">
+		<caption>Efficiency Table(Sort the column by clicking the header)</caption>
+		<thead>
+			<tr>
+				<th>Sort Algorithm</th><th>Array Length</th><th>Pre-Status</th><th>Time Consumed</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+</div>
+<div>
+	<center id="displaySort">
+		<input id="heapSort" type="button" onclick="sort(this)" value="Heap Sort"/>
+		<input id="quickSort" type="button" onclick="sort(this)" value="Quick Sort"/>
+		<input id="mergeSort1" type="button" onclick="sort(this)" value="Merge Sort"/><br><br>
+		<input id="insertionSort" type="button" onclick="sort(this)" value="Insertion Sort"/>
+		<input id="selectionSort" type="button" onclick="sort(this)" value="Selection Sort"/>
+		<input id="bubbleSort" type="button" onclick="sort(this)" value="Bubble Sort"/>
+		<p class="notification" id="sortNotif"></p>
+	</center>
+	<center id="displayArray">
+		Array Generater<br>(defalut: 100 in length, range 0-100.)
+		<p id="array" class="text"></p><br>
+		<input id="length" type="text" placeholder="length of array(default 100)"/>
+		<input id="range" type="text" placeholder="0 - range(default 100)"/>
+		<input id="RNG" type="button" value="Generate"/>
+		<p class="notification" id="generateNotif"></p>
+	</center>
+	<center id="displayTime">
+		Time Consumed: <p class="text" style="text-align:center;" id="time"></p><br>
+	</center>
+	<center>
+		<input id="clear" type="button" value="clear"/>
+	</center>
+</div>
+
+
+</body>
+<script>
+	$(document).ready(function(){
+		//hide notifications and clear button
+		$("#ETable").hide();
+		$( ".notification" ).hide();
+		$("#clear").hide();
+		//Show Statics
+		$("#toggleTable").click(function(){
+			$("#ETable").slideToggle("slow");
+			if($("#toggleTable").val()==="Show Statics"){
+				$("#toggleTable").val("Hide Statics");
+			}
+			else{
+				$("#toggleTable").val("Show Statics");
+			}
+		});
+		//when you click generater button
+		$("#RNG").click(function(){
+			$("#generateNotif").show();
+			//show notification
+			var length=$("#length").val();
+			if(length===""){
+				length=100;
+			}//default
+			var range=$("#range").val();
+			if(range===""){
+				range=100;
+			}//default
+			//transfrom them into number to check 
+			length=Number(length);
+			range=Number(range);
+			//done
+			if(length<=0){
+				$("#generateNotif").html("Please Put in a positive length value");
+				$("#clear").show();
+				return;
+			}
+			else if(length>3000){
+				$("#generateNotif").html("Too Large... Try a smaller length value(preferable under 1k)");
+				$("#clear").show();
+				return;
+			}
+			else if(isNaN(length)){
+				$("#generateNotif").html("Something Wrong, Check your length input please.");
+				$("#clear").show();
+				return;
+			}
+			//length exceptions
+			if(range<=0){
+				$("#generateNotif").html("Please Put in a positive range value");
+				$("#clear").show();
+				return;
+			}
+			else if(range>100000){
+				$("#generateNotif").html("Too Large... Try a smaller range value(preferable under 10k)");
+				$("#clear").show();
+				return;
+			}
+			else if(isNaN(range)){
+				$("#generateNotif").html("Something Wrong, Check your range input please.");
+				$("#clear").show();
+				return;
+			}
+			//range exceptions
+			var arr=generate(length,range);
+			$("#array").text(arr);
+			$("#generateNotif").html("Array Generated!<br>length: "+length+"; range: 0-"+range);
+		});
+		
+		//when you press clear button
+		$("#clear").click(function clearPage(){
+			$("#array").text("");
+			$("#length").val("");
+			$("#range").val("");
+			$("#time").text("");
+			$("#clear").hide();
+			$(".notification" ).hide();
+			$("#tableNotif" ).show();
+		});
+	});
+	//when you start to sort(any of a kind)
+	function sort(obj){
+		var type=obj.id;
+		$("#sortNotif").show();
+		var string = $("#array").text();//get the arr in string
+		if(string===""){
+			$("#sortNotif").html("No Array to sort");
+			return;
+		}
+		var arr = string.split(",");//split the string into string arr
+		//transform strings in array to number
+		//console.log("12"<"2") return false....
+		//When comparing two strings, "2" will be greater than "12", because (alphabetically) 1 is less than 2.
+		for(var i=0;i<arr.length;i++){
+			arr[i]=Number(arr[i]);
+		}
+		//done
+		//to check if it's pre-sorted
+		var sorted = checkSort(arr);
+		if(sorted){
+			sortedStatus="sorted";
+		}
+		else{
+			sortedStatus="unsorted";
+		}
+		//done
+		var time = run(arr, type);//sort the arr and get the time
+		sorted = checkSort(arr);//check if the arr is sorted, some sorting algorithm will not sort the arrat in place
+		if(!sorted){
+			insertionSort(arr);
+		}
+		
+		$("#sortNotif").html("Completed");
+		$("#array").text(arr);
+		$("#time").text(time);
+		$("#clear").show();
+		appendTable(type, arr, sortedStatus, time);//append a tr to table
+	}
+	function appendTable(SA, arr, sortedStatus, time){
+		var length = arr.length;
+		if(SA==="mergeSort1"){
+			SA="mergeSort(Top-Down)";
+		}
+		if(SA==="mergeSort2"){
+			SA="mergeSort(Bottom-up)";
+		}
+		var string="<tr class='hover'><td>"+SA+"</td><td>"+arr.length+"</td><td>"+sortedStatus+"</td><td>"+time+"</td></tr>";
+		$("#myTable > tbody").append(function(){
+			return string;
+		});
+	}
+</script>
+</html>

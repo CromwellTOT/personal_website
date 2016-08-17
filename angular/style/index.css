@@ -1,0 +1,63 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+:-moz-placeholder {
+   font-style: italic;  
+}
+::-moz-placeholder {
+   font-style: italic;  
+}
+:-ms-input-placeholder {  
+   font-style: italic; 
+}
+.hidden{
+	display:none;
+}
+.maxwidth{
+	max-width: 300px;
+}
+.pointer{
+	cursor: pointer;
+}
+.absolute{
+	position: absolute;
+}
+.btn-link{
+	color : orange;
+	font-size:24px;
+}
+.btn-link:hover{
+	text-decoration: none;
+	color : tomato;
+}
+.border{
+	border:1px black solid;
+}
+.complete {
+	background-color: #dcdcdc;
+}
+.complete td:nth-child(2) {
+	text-decoration: line-through;
+}
+captain{
+	display: block;
+	opacity: 0.5;
+	color: coral;
+	font-size: 24px;
+	text-align: center;
+}
+.underline:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.right{
+	float: right;
+}
+table{
+	background-color:white;
+	margin-top: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

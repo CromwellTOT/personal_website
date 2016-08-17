@@ -1,0 +1,132 @@
+<html>
+<head>
+	<link rel="stylesheet"  type="text/css" href="./style img/style-profile.css">
+    <link rel="stylesheet"  type="text/css" href="./style img/hover.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <title>My skills</title>
+<style>
+  #show{
+	position:relative;
+}
+#back{
+	position:relative;
+}
+table{
+	border-collapse: collapse;
+	margin-left:2%;
+	width:96%;
+}
+td{
+	vertical-align:top;
+}
+th, td {
+	padding: 8px;
+    border-top: 1px solid #ddd;
+}
+tr{
+	display:none;
+}
+tr:hover{
+	background-color: #ddd;
+}
+img{
+	width:80%;
+}
+span.crownbefore:before{
+	content: "\2655";
+    display: inline;
+	left: 1em;
+	padding: 0 1px;
+}
+span.calendarbefore:before{
+	content: "\01F4C5";
+    display: inline;
+	left: 1em;
+	padding: 0 1px;
+}
+span.handpointbefore:before{
+	content: "\261e";
+    display: inline;
+	left: 1em;
+	padding: 0 1px;
+}
+</style>
+  <script>
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("#div1").fadeIn(200,
+			function(){$("#div2").fadeIn(200,
+				function(){$("#div3").fadeIn(200,
+					function(){$("#div4").fadeIn(200,
+						function(){$("#div5").fadeIn(200,
+							function(){$("#div6").fadeIn(200,
+								function(){$("#div7").fadeIn(200,
+									function(){$("#div8").fadeIn(200,
+										function(){$("#back").fadeIn(200);}
+										
+									);}
+								);}
+							);}
+						);}
+					);}
+				);}
+			);}
+		);	
+    });
+});
+</script>
+</head>
+
+<body>
+
+<div id="show" class="show" title="show me your power!"></div>
+<br>
+<table>
+  <tr id="div1">
+    <td width="20%"><span class="Bold">Programming Languages:</span></td>
+    <td width="80%">C, C++, C#, Java, Python, Prolog.</td> 
+  </tr>
+  
+  <tr id="div2">
+    <td width="20%"><span class="Bold">Scripting Languages:</span></td>
+    <td width="80%">Bash, Perl, DOS.</td> 
+  </tr>
+  
+  <tr id="div3">
+    <td width="20%"><span class="Bold">Web development:</span></td>
+    <td width="80%">HTML5/CSS3, JavaScript/jQuery, XML, PHP/SQLi, MySQL, ASP.NET/C#, MS.SQL server.</td>
+  </tr>
+  
+  <tr id="div4">
+    <td width="20%"><span class="Bold">Operating Systems:</span></td>
+    <td width="80%">Linux OS(fedora, Kali, Ubuntu, Red Hat).</td>
+  </tr>
+  
+  <tr id="div5">
+    <td width="20%"><span class="Bold">Cryptography Knowledge:</span></td>
+    <td width="80%">DES/AES, RSA, Elgamal, ECC, CCC, SHA-n, DSA, (P)RNG.</td>
+  </tr>
+  
+  <tr id="div6">
+    <td width="20%"><span class="Bold">Internet Protocol Knowledge:</span></td>
+    <td width="80%">BGP, RIP/OSPF/IS-IS, DNS, NAT, FTP, SMTP/MIME/POP3/IMAP, DHCP/NDP, MPLS, IoT.</td>
+  </tr>
+  
+  <tr id="div7">
+    <td width="20%"><span class="Bold">Network Security Knowledge:</span></td>
+    <td width="80%">XSS, SQLi, SSL/TLS/HTTPS, X.509, 802.11i, Kerberos, 802.1X, PGP, S/MIME, HMAC, Active/Passive attacks(Dos, Spoofing, ARP poisoning, man in the middle, Ping flood, Buffer overflow).</td>
+  </tr>
+  
+    <tr id="div8">
+    <td width="20%"><span class="Bold">CyberSecurity Tools:</span></td>
+    <td width="80%">WireShark, OWASP ZAP, Oracle VM Virtualbox/VMware, Burp Suite, KALI(AirCrack, John the Ripper, Metasploit, Nmap, BeEF, Ettercap, GNS3, iptables), IDA.</td>
+  </tr>
+  
+</table>
+
+
+<div id="back" class="back" title="Let's get back..." style="display:none;" onclick="history.go(-1);"></div>
+</div>
+</body>
+</html>

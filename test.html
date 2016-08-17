@@ -1,0 +1,111 @@
+<html>
+<head>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<style>
+#budong{
+	border:1px black solid;
+	background-color:rgb(204, 0, 0);
+	border-radius: 10px;
+	position:absolute;
+	left:100px;
+	top:50px;
+	width:50px;
+	height:30px;
+}
+#dong{
+	text-align:center;
+	border:1px black solid;
+	border-radius: 10px;
+	z-index:100;
+	background-color:red;
+	position:absolute;
+	left:100px;
+	top:52px;
+	width:50px;
+	height:30px;
+	animation-name: dongqilai;
+	animation-iteration-count:infinite;
+    animation-duration: 2s;
+}
+@keyframes dongqilai {
+    0%   {top:50px}
+    40%  {top:40px}
+	60%  {top:40px}
+    100% {top:50px}
+}
+#hei{
+	border:1px black solid;
+	width:100%; 
+	
+}
+.border {
+	border: 1px solid black
+}
+.float {
+	float: left;
+}
+.clear {
+	clear: left;
+}
+.fade{
+	color: black;
+	width: 100px;
+	height: 100px;
+	background-color: snow;
+}
+.inlineblock {
+	display: inline-block;
+	margin-left: -4px;
+}
+#_5 {
+	margin-top:10px;
+}
+</style>
+<p>So am I</p>
+</head>
+<body>
+<div>
+	<div id="budong"></div>
+	<div id="dong">click</div>
+</div>
+
+    <p>I am floated</p>
+    <p>So am I</p>
+	<p>So am I</p>
+
+<a href="#">
+        <h1>Hello</h1>
+        <p id="hei">I am some text</p>
+    </a>
+	<input id="test" type="text" /> 
+	
+	<div>
+		<span id="pre">input</span>
+		<input id="text" type="text" />
+	</div>
+	
+	<div class="fade border inlineblock">1</div>
+	<div class="fade border inlineblock">2</div>
+	<div class="fade border inlineblock">3</div><br/>
+	<div class="fade border inlineblock">4</div>
+	<div id="_5" class="fade border inlineblock">5</div>
+	<div class="fade border inlineblock">6</div><br/>
+	<div class="fade border inlineblock">7</div>
+	<div class="fade border inlineblock">8</div>
+	<div class="fade border inlineblock">9</div>
+</body>
+<script type="text/javascript" src="./js/test.js"></script>
+
+</html>
+<script>
+	$(document).keypress(function(e) {
+		$("#test").val(String.fromCharCode(e.which));
+	});
+	$("#text").select(function() {
+		$("#pre").text("selected");
+	}); 
+	$(".fade").click(function() {
+		$(this).toggle(1000);
+	});
+</script>

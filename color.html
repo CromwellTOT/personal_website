@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Color Picker</title>
+</head>
+<style>
+	.border {
+		border: 1px black solid;
+	}
+	div.card {
+		display: inline-block;
+		width: 200px;
+		heigth: 100px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		text-align: center;
+		margin:10px;
+	}
+
+	div.color {
+		color: white;
+		padding: 10px;
+	}
+
+	div.hex {
+		padding: 10px;
+		padding-top: 15px;
+	}
+	#input{
+		padding: 10px;
+		border: solid 1px #dcdcdc;
+		transition: box-shadow 0.3s, border 0.3s;
+	}
+	#input:focus, #input.focus {
+		border: solid 1px #707070;
+		box-shadow: 0 0 5px 1px #969696;
+	}
+</style>
+<body>
+<div class="jumbotron text-center">
+	<h2>I have 150 colors in my pocket!<h2>
+	<h3>or 151... I don't remember it<h3>
+</div>
+
+<div class="container-fluid text-center">
+	<input id="input" type="text" onkeyup="process(this.value)"></input><br><br>
+	<div id="output"></div>
+</div>
+
+<script>
+var colors;
+$.getJSON('colors.json', function(obj) {
+	colors = obj;
+});
+function process(val){
+	$("#output").html("");
+	if(val!==""){
+		var matchColors = [];
+		for(var color in colors){
+			if(strStr(color, val)){
+				matchColors.push(color);
+			}
+		}
+		output(matchColors);
+		//console.log(matchColors);
+		//console.log("---------------");
+	}
+}
+function strStr(str1, str2){
+	for(var i = 0;i < str1.length&&i < str2.length; i++){
+		if(str1[i]!==str2[i]){
+			return false;
+		}
+	}
+	return true;
+}
+function output(matchColors){
+	if(matchColors.length>0){
+		for(var i in matchColors){
+			var color = matchColors[i];
+			var hex = colors[color];
+			//console.log(color+" "+hex);
+			$("#output").append(
+				"<div class='card'><div class='color' style='background-color:"+color+"'><h1>"+hex+"</h1></div><div class='hex'><p>"+color+"</p></div></div>"
+			);
+		}
+	}
+	else{
+		$("#output").html("No Match....");
+	}
+}
+</script>
+</body>
+</html>
